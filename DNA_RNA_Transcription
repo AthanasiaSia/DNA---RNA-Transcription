@@ -1,0 +1,18 @@
+while True:
+    sequence = input("Enter your DNA sequence or exit: ")
+    sequence = sequence.upper()
+
+    if sequence == "EXIT":
+        print("Exiting program.")
+        break
+
+    sequence = sequence.replace("T", "U")
+
+    print("Output RNA: ",sequence)
+
+    rna_bases = {"A": 0, "U": 0, "G": 0, "C": 0}
+    for base in rna_bases:
+        rna_bases[base] = sequence.count(base)
+    
+    for base, count in rna_bases.items():
+        print(base, ":", count)
